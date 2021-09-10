@@ -1,0 +1,13 @@
+{
+    "name": "No drinking no working",
+    "description": "No drinking no working!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+      "service_worker": "js/background.js"
+    },
+    "permissions": ["storage"],  
+    "action": {
+      "default_icon": "/images/drip.png"
+    }
+}

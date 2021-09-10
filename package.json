@@ -1,0 +1,22 @@
+{
+  "name": "no-drinking-no-working",
+  "version": "1.0.0",
+  "description": "This is a chrome extension let you have to drink water during working.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiyu666/no-drinking-no-working.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aiyu666/no-drinking-no-working/issues"
+  },
+  "homepage": "https://github.com/aiyu666/no-drinking-no-working#readme",
+  "devDependencies": {
+    "jest": "^27.1.1"
+  }
+}
