@@ -1,23 +1,42 @@
-const changeColor = document.getElementById('changeColor');
+const { getChromeLocalStorage, setChromeLocalStorage } = require('./chromeStorage');
 
-chrome.storage.sync.get('color', ({ color }) => {
-  changeColor.style.backgroundColor = color;
-});
+async function eventHandler(event) {
+  const eventObject = {
+    event,
+  };
+  const response = await chrome.runtime.sendMessage(eventObject);
+  return response;
+}
 
-// The body of this function will be executed as a content script inside the
-// current page
-function setPageBackgroundColor() {
-  chrome.storage.sync.get('color', ({ color }) => {
-    document.body.style.backgroundColor = color;
+function updateStatus(text) {
+  const lableStatus = document.getElementById('extensionStatus');
+  lableStatus.innerHTML = text;
+  setChromeLocalStorage({ status: text });
+}
+
+function initEventListener() {
+  const injectImg = document.getElementById('injectImg');
+  const removeImg = document.getElementById('removeImg');
+
+  injectImg.addEventListener('click', async () => {
+    const result = await eventHandler('injectImg');
+    console.log(result);
+    return (result) ? updateStatus('drinking') : updateStatus('inject image fail');
+  });
+
+  removeImg.addEventListener('click', () => {
+    setChromeLocalStorage({ status: 'not running' });
   });
 }
 
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener('click', async () => {
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  console.log();
-  chrome.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  });
-});
+async function syncPopupStatus() {
+  const result = await getChromeLocalStorage(['status']);
+  return (result) ? updateStatus(result.status) : updateStatus('not init');
+}
+
+function initPupup() {
+  initEventListener();
+  syncPopupStatus();
+}
+
+initPupup();
