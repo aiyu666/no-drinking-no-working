@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/popup.css">
+  <script type="text/javascript" src="js/progress.js"></script>
+  <title>Document</title>
+</head>
+<body onload="progress(40, 60)">
+  <div class="box">
+    <div class="container">
+      <div class="form">
+        <h2>請填寫以下訊息</h2>
+        <form>
+          <div class="inputBox">
+            <input type="url" placeholder=" ">
+            <label>請輸入提醒喝水時的圖片網址</label>
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder=" ">
+            <label>請輸入今日想達成的總水量 (單位 毫升)</label>
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder=" ">
+            <label>請輸入喝水容器的總水量 (單位 毫升)</label>
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder=" ">
+            <label>請輸入提醒您喝水的總時長 (單位 小時)</label>
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder=" ">
+            <label>請輸入提醒您喝水的時間間隔 (單位 分鐘)</label>
+          </div>
+          <div class="inputBox">
+            <button type="submit">確認</button>
+            <button type="reset">取消</button>
+          </div>
+        </form>
+        <h2>今日喝水完成進度條</h2>
+        <div id="myProgress">
+          <div id="myBar" style="width: 40%;">
+            <div id="label">40%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
