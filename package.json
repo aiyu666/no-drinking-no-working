@@ -4,7 +4,8 @@
   "description": "This is a chrome extension let you have to drink water during working.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "build": "webpack"
   },
   "pre-commit": [
     "test"
@@ -20,13 +21,20 @@
   },
   "homepage": "https://github.com/aiyu666/no-drinking-no-working#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^6.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-webpack-plugin": "^3.0.1",
     "jest": "^27.1.1",
-    "pre-commit": "^1.2.2"
-  },
-  "dependencies": {
-    "eslint-plugin-jest": "^24.4.0"
+    "pre-commit": "^1.2.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
   }
 }
