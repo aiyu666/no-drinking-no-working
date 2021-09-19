@@ -1,0 +1,44 @@
+:root {
+    --backgroundColor: #333;
+    --popupColor: #2b4242;
+    --textColor: #fff;
+    --titleColor: #999;
+    --buttonColor: #465;
+    --barColor: #04aa6d;
+}
+
+.overlay {
+    background: rgba(0,0,0,.7);
+    z-index: 9998;
+}
+
+.confirmWaterContainer {
+    z-index: 9999;
+    position: relative;
+    height: calc(100vh - 3.5rem);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.confirmWaterConetent{
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+}
+
+button {
+    margin: 0 5px;
+    padding: 8px 30px;
+    border-radius: 5px;
+    background: var(--buttonColor);
+    color: var(--textColor);
+    font-size: 16px;
+    border: 3px solid transparent;
+    transition: all 0.25s;
+}
+button:hover {
+    border: 3px solid var(--titleColor);
+}
